@@ -1,0 +1,10 @@
+.gradle
+build/BUILD
+build/BUILDROOT
+build/libs
+build/SOURCES
+build/SPECS
+build/SRPMS
+build/tmp
+build/apache-tomcat-initscript
+.project
