@@ -46,14 +46,14 @@ case "${"\$1"}" in
   start)
         # Start daemon.
         echo "Starting Tomcat:"
-        ${"\$CATALINA_HOME"}/bin/catalina.sh start
+        /bin/su tomcat ${"\$CATALINA_HOME"}/bin/catalina.sh start
         RETVAL=${"\$?"}
         [ ${"\$RETVAL"} = 0 ] && touch ${"\$LOCKFILE"}
         ;;
   stop)
         # Stop daemons.
         echo "Shutting down Tomcat:"
-        ${"\$CATALINA_HOME"}/bin/catalina.sh stop
+        /bin/su tomcat ${"\$CATALINA_HOME"}/bin/catalina.sh stop
         RETVAL=${"\$?"}
         [ ${"\$RETVAL"} = 0 ] && rm -f ${"\$LOCKFILE"}
         ;;
