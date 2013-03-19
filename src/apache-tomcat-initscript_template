@@ -35,6 +35,7 @@ export CATALINA_PID=/var/${"\$SERVICENAME"}/${"\$SERVICENAME"}.pid
 export JAVA_HOME=/usr/java/latest
 #export JRE_HOME=
 export CATALINA_HOME=/usr/${name}
+export CATALINA_BASE=${"\$CATALINA_HOME"}
 #export JAVA_OPTS=
 #export CATALINA_OPTS=
 

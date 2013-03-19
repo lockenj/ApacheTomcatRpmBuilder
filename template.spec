@@ -39,11 +39,13 @@ fi
 #Configure/Compile files in BUILD
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/${name}/pid
-mkdir -p %{buildroot}/usr/${name}/webapps
-mkdir -p %{buildroot}/var/${name}
-mkdir -p %{buildroot}/etc/init.d/
-mkdir -p %{buildroot}/usr/${name}
+install --directory %{buildroot}/usr/${name}
+install --directory %{buildroot}/usr/${name}/pid
+
+install --directory %{buildroot}/var/${name}
+
+install --directory %{buildroot}/etc/init.d/
+
 
 install -m 755 ${name}-initscript %{buildroot}/etc/init.d/${name}
 cp -rf ${name}-${version}/* %{buildroot}/usr/${name}/
