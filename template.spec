@@ -25,11 +25,14 @@ chkconfig --add %{name}
 
 
 %preun
-if [[ "${1}" = "0" ]]; then
+echo "Shutting down %{name}"
 service %{name} stop > /dev/null 2>&1
 chkconfig --del %{name}
-fi
-	
+
+#Cleanup folders that Tomcat generates stuff in
+rm -rf /usr/${name}/conf
+rm -rf /usr/${name}/logs
+rm -rf /usr/${name}/work
 	
 #Uncompress files to BUILD
 %prep
